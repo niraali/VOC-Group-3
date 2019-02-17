@@ -6,8 +6,8 @@ filepathOut = 'F:/Miles/Downloads/pp-minimised.csv'
 
 # This reads in the CSV and takes only the columns specified.
 # It then outputs the CSV in small chunks to save on time and memory usage.
-# df = dd.read_csv('pp-complete.csv', usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13])
-# df.to_csv('pp-minimised/output-*.csv', index=False)
+df = dd.read_csv('pp-complete.csv', usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13])
+df.to_csv('pp-minimised/output-*.csv', index=False)
 
 # This takes those filenames and collates them into a single CSV file.
 filenames = glob('pp-minimised/output-*.csv')
