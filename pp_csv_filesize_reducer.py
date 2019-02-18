@@ -9,6 +9,7 @@ filepathOut = 'F:/Niraali/Documents/VOC/pp-minimised.csv'
 df = dd.read_csv('pp-complete.csv', usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13])
 df.to_csv('pp-minimised/output-*.csv', index=False)
 
+
 # This takes those filenames and collates them into a single CSV file.
 filenames = glob('pp-minimised/output-*.csv')
 with open('pp-minimised.csv', 'w') as out:
