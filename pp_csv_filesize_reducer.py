@@ -1,8 +1,8 @@
 import dask.dataframe as dd
 from glob import glob
 
-filepathIn = 'F:/Miles/Downloads/pp-complete.csv'
-filepathOut = 'F:/Miles/Downloads/pp-minimised.csv'
+filepathIn = 'F:/Niraali/Documents/VOC/pp-complete.csv'
+filepathOut = 'F:/Niraali/Documents/VOC/pp-minimised.csv'
 
 # This reads in the CSV and takes only the columns specified.
 # It then outputs the CSV in small chunks to save on time and memory usage.
