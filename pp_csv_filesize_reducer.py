@@ -14,11 +14,9 @@ if not os.path.isdir('../pp-middle'):
 header_names = ['Price', 'Date of Transfer', 'Postcode', 'Property Type', 'Old/New', 'Duration', 'PAON', 'SAON',
                     'Street', 'Town/City', 'District', 'County']
 df = dd.read_csv(filepathIn, usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13], names=header_names)
-
 nottinghamshire_list = df[(df.County == "NOTTINGHAMSHIRE")]
 
-nottinghamshire_list.to_csv(filepathMiddle, index=False)
-
+nottinghamshire_list.to_csv(filepathMiddle, index=False, header_first_partition_only=True)
 
 # This takes those filenames and collates them into a single CSV file.
 filenames = glob(filepathMiddle)
