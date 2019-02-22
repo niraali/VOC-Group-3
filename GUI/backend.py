@@ -2,7 +2,7 @@
 """
 Created on Thu Feb 14 19:29:59 2019
 
-@author: Miles
+@author: Niraali
 """
 
 # Before running anything, you need to install PyQt5. Do this by running
@@ -18,26 +18,29 @@ from PyQt5 import QtWidgets
 # (making sure the file names and paths are correct) it will convert it to a 
 # python file. You can see this has been done with 'design.ui' converted to 
 # 'design.py'. You can then use this as shown in this file.
-from design import Ui_MainWindow
+from GUI.Explorer import Ui_mainWindow
+from filter import filter
 
-class TaxCalc(QtWidgets.QMainWindow):
+class DataExplorer(QtWidgets.QMainWindow):
+    selectedFile = ""
+
     # This is just to initialise the window. It links all the UI elements to
     # the python script and 'connects' the calcButtonClicked function to the 
     # actual button, so it performs that action.
     def __init__(self):
-        super(TaxCalc, self).__init__()
-        self.ui = Ui_MainWindow()
+        super(DataExplorer, self).__init__()
+        self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
-        self.ui.calcTaxButton.clicked.connect(self.calcButtonClicked)
-    
-    # This function displays the price with tax added on.
-    def calcButtonClicked(self):
-        price = self.ui.priceBox.toPlainText() # Grabs the text from the textbox
-        percent = self.ui.taxRate.value() / 100 # Grabs the value from the spinner and converts it to a percentage
-        total = int(price) * (1 + percent) # Calculates the total price      
-        self.ui.resultsWindow.setText(str(total)) # Sets the text of the resultBox to be the total as a string.
+        self.ui.fileSelector.clicked.connect(self.openFileDialogue)
+        self.ui.filterButton.clicked.connect(self.filterFile)
+
+    def openFileDialogue(self):
+        self.selectedFile, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Select CSV", "","CSV Files (*.csv)")
+
+    def filterFile(self):
+        filter(self.selectedFile)
 
 app = QtWidgets.QApplication([]) # Boilerplate code, don't worry about this.
-window = TaxCalc() # Creates a new TaxCalc window (the name of the class we make above)
+window = DataExplorer() # Creates a new TaxCalc window (the name of the class we make above)
 window.show() # Here is where the UI is shown.
 sys.exit(app.exec()) # When the X button is pressed, this will close the app.
