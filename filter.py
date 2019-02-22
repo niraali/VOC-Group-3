@@ -107,7 +107,6 @@ def filter(fileName):
         is_borough = Series(booleans9)
         is_street_name = Series(booleans10)
 
-
         print(data[(data.county == "GREATER LONDON")]) # This is the only line needed to sort by a field
         # print (data[is_post_code])
         # print (data[is_house_type])
