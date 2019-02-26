@@ -1,4 +1,5 @@
 import dask.dataframe as dd
+import pandas as pd
 from glob import glob
 import os
 
@@ -15,6 +16,10 @@ header_names = ['Price', 'Date of Transfer', 'Postcode', 'Property Type', 'Old/N
                     'Street', 'Town/City', 'District', 'County']
 df = dd.read_csv(filepathIn, usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13], names=header_names)
 nottinghamshire_list = df[(df.County == "NOTTINGHAMSHIRE")]
+
+# def inflation(Price):
+#     price * 1.028^
+
 
 nottinghamshire_list.to_csv(filepathMiddle, index=False, header_first_partition_only=True)
 

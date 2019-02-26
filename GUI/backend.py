@@ -11,6 +11,8 @@ Created on Thu Feb 14 19:29:59 2019
 
 import sys
 from PyQt5 import QtWidgets
+from GUI.ActualFilter import filter
+import GUI.models.dataframe_model as dm
 
 # In QT-Designer (you can find it in C:\Anaconda\Library\bin\designer.exe) you 
 # can create a UI with drag and drop. When you save this, a .ui file is created.
@@ -19,7 +21,6 @@ from PyQt5 import QtWidgets
 # python file. You can see this has been done with 'design.ui' converted to 
 # 'design.py'. You can then use this as shown in this file.
 from GUI.Explorer import Ui_mainWindow
-from filter import filter
 
 class DataExplorer(QtWidgets.QMainWindow):
     selectedFile = ""
@@ -32,13 +33,27 @@ class DataExplorer(QtWidgets.QMainWindow):
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
         self.ui.fileSelector.clicked.connect(self.openFileDialogue)
-        self.ui.filterButton.clicked.connect(self.filterFile)
+        self.ui.enterButton.clicked.connect(self.enterButton)
 
     def openFileDialogue(self):
         self.selectedFile, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Select CSV", "","CSV Files (*.csv)")
 
-    def filterFile(self):
-        filter(self.selectedFile)
+    def enterButton(self):
+        county = str(self.ui.countyDropDown.currentText())
+        houseNumber = self.ui.houseNoInput.text()
+        postcode = self.ui.postcodeInput.text()
+        if (county != ""):
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Information)
+            msg.setText("Please select a county")
+        if (postcode != ""):
+            msg = QtWidgets.QMessageBox()
+            msg.setIcon(QtWidgets.QMessageBox.Information)
+            msg.setText("Please input a Postcode")
+        filtered_data = filter(county, postcode, houseNumber, self.selectedFile)
+        print(filtered_data)
+        dataModel = dm.PandasModel(filtered_data)
+        self.ui.tableView.setModel(dataModel)
 
 app = QtWidgets.QApplication([]) # Boilerplate code, don't worry about this.
 window = DataExplorer() # Creates a new TaxCalc window (the name of the class we make above)
