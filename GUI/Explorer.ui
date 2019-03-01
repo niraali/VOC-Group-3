@@ -32,7 +32,7 @@
      <rect>
       <x>20</x>
       <y>260</y>
-      <width>112</width>
+      <width>211</width>
       <height>34</height>
      </rect>
     </property>
@@ -48,7 +48,7 @@
      <rect>
       <x>20</x>
       <y>90</y>
-      <width>111</width>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
@@ -74,7 +74,7 @@
      <rect>
       <x>20</x>
       <y>160</y>
-      <width>113</width>
+      <width>211</width>
       <height>25</height>
      </rect>
     </property>
@@ -84,7 +84,7 @@
      <rect>
       <x>20</x>
       <y>220</y>
-      <width>113</width>
+      <width>211</width>
       <height>25</height>
      </rect>
     </property>
@@ -105,10 +105,10 @@
    <widget class="QLabel" name="postcodeLabel">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>190</y>
-      <width>68</width>
-      <height>19</height>
+      <width>91</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -118,10 +118,10 @@
    <widget class="QLabel" name="countyLabel">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>60</y>
-      <width>68</width>
-      <height>19</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -131,11 +131,115 @@
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>290</x>
       <y>21</y>
-      <width>771</width>
-      <height>281</height>
+      <width>651</width>
+      <height>201</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="ashfieldCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ashfield</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="bassetlawCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>350</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bassetlaw</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="gedlingCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>410</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gedling</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="mansfieldCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mansfield</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="newarkCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>470</y>
+      <width>201</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Newark and Sherwood</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="nottinghamCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nottingham</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="rushcliffeCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>530</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rushcliffe</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="broxtoweCheck">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>380</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Broxtowe</string>
     </property>
    </widget>
   </widget>
