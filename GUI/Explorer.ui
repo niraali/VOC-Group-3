@@ -107,12 +107,12 @@
      <rect>
       <x>20</x>
       <y>190</y>
-      <width>91</width>
+      <width>191</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Postcode</string>
+     <string>Postcode (eg. &quot;NG9 2EL&quot;)</string>
     </property>
    </widget>
    <widget class="QLabel" name="countyLabel">
@@ -142,7 +142,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>320</y>
+      <y>360</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -155,7 +155,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>350</y>
+      <y>390</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -168,7 +168,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>410</y>
+      <y>450</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -181,7 +181,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>440</y>
+      <y>480</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -194,7 +194,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>470</y>
+      <y>510</y>
       <width>201</width>
       <height>23</height>
      </rect>
@@ -207,7 +207,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>500</y>
+      <y>540</y>
       <width>121</width>
       <height>23</height>
      </rect>
@@ -220,7 +220,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>530</y>
+      <y>570</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -233,13 +233,39 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>380</y>
+      <y>420</y>
       <width>101</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Broxtowe</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="enterButton2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>600</y>
+      <width>211</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enter</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>231</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Average Prices for district</string>
     </property>
    </widget>
   </widget>

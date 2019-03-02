@@ -14,6 +14,7 @@ from PyQt5 import QtWidgets
 import GUI.ActualFilter as filters
 import GUI.models.dataframe_model as dm
 import matplotlib.pyplot as plt
+import pandas as pd
 import numpy as np
 
 # In QT-Designer (you can find it in C:\Anaconda\Library\bin\designer.exe) you 
@@ -37,18 +38,11 @@ class DataExplorer(QtWidgets.QMainWindow):
         super(DataExplorer, self).__init__()
         self.ui = Ui_mainWindow()
         self.ui.setupUi(self)
-        #self.listOfCheckboxes = [self.ui.ashfieldCheck, self.bassetlawCheck, self.broxtoweCheck, self.gedlingCheck,
-                                 #self.mansfieldCheck, self.newarkCheck, self.nottingham, self.rushcliffe]
+        self.listOfCheckboxes = [self.ui.ashfieldCheck, self.ui.bassetlawCheck, self.ui.broxtoweCheck, self.ui.gedlingCheck,
+                                 self.ui.mansfieldCheck, self.ui.newarkCheck, self.ui.nottinghamCheck, self.ui.rushcliffeCheck]
         self.ui.fileSelector.clicked.connect(self.openFileDialogue)
         self.ui.enterButton.clicked.connect(self.enterButton)
-        #self.ui.ashfieldCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.bassetlawCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.broxtoweCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.gedlingCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.mansfieldCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.newarkCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.nottinghamCheck.stateChanged.connect(self.showAvgPrices)
-        #self.ui.rushcliffeCheck.stateChanged.connect(self.showAvgPrices)
+        self.ui.enterButton2.clicked.connect(self.showAvgPrices)
 
     def openFileDialogue(self):
         self.selectedFile, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Select CSV", "","CSV Files (*.csv)")
@@ -70,30 +64,24 @@ class DataExplorer(QtWidgets.QMainWindow):
         dataModel = dm.PandasModel(filtered_data)
         self.ui.tableView.setModel(dataModel)
 
-    #def showAvgPrices(self):
-     #   listOfAvgPrices = []     #[ (0, box1), (1, box2), (2, box3) ]
-      #  for index, box in enumerate(self.listOfCheckboxes):
-       #     if box.isChecked():
-        #        filtered_data = filters.filterByDistrict(self.listOfDistricts[index].upper(), self.selectedFile)
-         #       listOfAvgPrices.append(self.calculateAvgPrice(filtered_data))
+    def showAvgPrices(self):
+        #[ (0, box1), (1, box2), (2, box3) ]
+        avgPriceDf = pd.DataFrame(columns=['District', 'Avg Price (£)'])
+        avgPriceList = []
+        districtsUsed = []
+        for index, box in enumerate(self.listOfCheckboxes):
+            if box.isChecked():
+                filtered_data = filters.filterByDistrict(self.listOfDistricts[index].upper(), self.selectedFile)
+                avg = filtered_data['Price (GBP)'].astype(float).mean()
+                avgPriceList.append(avg)
+                districtsUsed.append(self.listOfDistricts[index])
 
-        #Print listOfAvgPrices to table view
+        avgPriceDf['District'] = districtsUsed
+        avgPriceDf['Avg Price (£)'] = avgPriceList
 
-   # def calculateAvgPrice(self, dataframe):
-        #avg =
-        #return avg
-
-
-#print ("calculate an average of first n natural numbers")
-#n = input("Enter Number ")
-#n = int (n)
-#average = 0
-#sum = 0
-#for num in range(0,n+1,1):
- #   sum = sum+num;
-#average = sum / n
-#print("Average of first ", n, "number is: ", average)
-
+        #Print avgPriceDf to table view
+        dataModel = dm.PandasModel(avgPriceDf)
+        self.ui.tableView.setModel(dataModel)
 
 app = QtWidgets.QApplication([]) # Boilerplate code, don't worry about this.
 window = DataExplorer()
