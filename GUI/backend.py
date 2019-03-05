@@ -23,7 +23,8 @@ import numpy as np
 # (making sure the file names and paths are correct) it will convert it to a 
 # python file. You can see this has been done with 'design.ui' converted to 
 # 'design.py'. You can then use this as shown in this file.
-from GUI.Explorer import Ui_mainWindow
+from GUI.Explorer import Ui_mainWindow as ExplorerUI
+from GUI.Prediction import Ui_MainWindow as PredictionUI
 
 class DataExplorer(QtWidgets.QMainWindow):
     selectedFile = ""
@@ -36,13 +37,19 @@ class DataExplorer(QtWidgets.QMainWindow):
     # actual button, so it performs that action.
     def __init__(self):
         super(DataExplorer, self).__init__()
-        self.ui = Ui_mainWindow()
+        self.ui = ExplorerUI()
         self.ui.setupUi(self)
-        self.listOfCheckboxes = [self.ui.ashfieldCheck, self.ui.bassetlawCheck, self.ui.broxtoweCheck, self.ui.gedlingCheck,
-                                 self.ui.mansfieldCheck, self.ui.newarkCheck, self.ui.nottinghamCheck, self.ui.rushcliffeCheck]
+        self.listOfCheckboxes = [self.ui.ashfieldCheck, self.ui.bassetlawCheck, self.ui.broxtoweCheck,
+                                 self.ui.gedlingCheck, self.ui.mansfieldCheck, self.ui.newarkCheck,
+                                 self.ui.nottinghamCheck, self.ui.rushcliffeCheck]
         self.ui.fileSelector.clicked.connect(self.openFileDialogue)
         self.ui.enterButton.clicked.connect(self.enterButton)
         self.ui.enterButton2.clicked.connect(self.showAvgPrices)
+        self.ui.predictionPrototypeButton.clicked.connect(self.goToPredictionPrototype)
+
+    def goToPredictionPrototype(self):
+        newWindow = PredictionPrototype()
+        newWindow.show()
 
     def openFileDialogue(self):
         self.selectedFile, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Select CSV", "","CSV Files (*.csv)")
@@ -82,6 +89,13 @@ class DataExplorer(QtWidgets.QMainWindow):
         #Print avgPriceDf to table view
         dataModel = dm.PandasModel(avgPriceDf)
         self.ui.tableView.setModel(dataModel)
+
+class PredictionPrototype(QtWidgets.QMainWindow):
+
+    def __init__(self):
+        super(PredictionPrototype, self).__init__()
+        self.ui = PredictionUI()
+        self.ui.setupUi(self)
 
 app = QtWidgets.QApplication([]) # Boilerplate code, don't worry about this.
 window = DataExplorer()

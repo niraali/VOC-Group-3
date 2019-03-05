@@ -13,8 +13,8 @@ if not os.path.isdir('../pp-middle'):
     os.mkdir('../pp-middle')
 
 
-header_names = ['Price', 'Date of Transfer', 'Postcode', 'Property Type', 'Old/New', 'Duration', 'PAON', 'SAON',
-                    'Street', 'Town/City', 'District', 'County']
+header_names = ['Price', 'Date of Transfer', 'Postcode', 'Property Type', 'Old/New', 'Freehold/Leasehold',
+                '', 'SAON', 'Street', 'Town/City', 'District', 'County']
 df = dd.read_csv(filepathIn, usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13], names=header_names)
 nottinghamshire_list = df[(df.County == "NOTTINGHAMSHIRE")]
 
