@@ -6,9 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1009</width>
-    <height>710</height>
+    <width>1819</width>
+    <height>1027</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -18,10 +25,18 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
-      <width>112</width>
-      <height>34</height>
+      <y>60</y>
+      <width>211</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Choose File</string>
@@ -31,10 +46,18 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>260</y>
+      <y>380</y>
       <width>211</width>
-      <height>34</height>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>ArrowCursor</cursorShape>
@@ -47,7 +70,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>90</y>
+      <y>160</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -73,7 +96,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>160</y>
+      <y>250</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -83,7 +106,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>220</y>
+      <y>330</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -93,10 +116,18 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>130</y>
-      <width>121</width>
-      <height>19</height>
+      <y>210</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>House Number</string>
@@ -106,10 +137,15 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>190</y>
-      <width>191</width>
-      <height>21</height>
+      <y>290</y>
+      <width>221</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Postcode (eg. &quot;NG9 2EL&quot;)</string>
@@ -119,33 +155,49 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>120</y>
       <width>81</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>County</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView">
+   <widget class="QTableView" name="tableViewer">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>21</y>
-      <width>651</width>
-      <height>201</height>
+      <x>280</x>
+      <y>61</y>
+      <width>1481</width>
+      <height>381</height>
      </rect>
     </property>
    </widget>
    <widget class="QCheckBox" name="ashfieldCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>360</y>
-      <width>101</width>
-      <height>23</height>
+      <x>40</x>
+      <y>540</y>
+      <width>141</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Ashfield</string>
@@ -154,11 +206,19 @@
    <widget class="QCheckBox" name="bassetlawCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>390</y>
-      <width>101</width>
+      <x>40</x>
+      <y>580</y>
+      <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Bassetlaw</string>
@@ -167,11 +227,19 @@
    <widget class="QCheckBox" name="gedlingCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>450</y>
-      <width>101</width>
+      <x>40</x>
+      <y>660</y>
+      <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Gedling</string>
@@ -180,11 +248,19 @@
    <widget class="QCheckBox" name="mansfieldCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>480</y>
-      <width>101</width>
-      <height>23</height>
+      <x>40</x>
+      <y>700</y>
+      <width>121</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Mansfield</string>
@@ -193,11 +269,19 @@
    <widget class="QCheckBox" name="newarkCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>510</y>
-      <width>201</width>
-      <height>23</height>
+      <x>40</x>
+      <y>740</y>
+      <width>221</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Newark and Sherwood</string>
@@ -206,11 +290,19 @@
    <widget class="QCheckBox" name="nottinghamCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>540</y>
-      <width>121</width>
-      <height>23</height>
+      <x>40</x>
+      <y>780</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Nottingham</string>
@@ -219,11 +311,19 @@
    <widget class="QCheckBox" name="rushcliffeCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>570</y>
-      <width>101</width>
-      <height>23</height>
+      <x>40</x>
+      <y>820</y>
+      <width>171</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Rushcliffe</string>
@@ -232,11 +332,19 @@
    <widget class="QCheckBox" name="broxtoweCheck">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>420</y>
-      <width>101</width>
+      <x>40</x>
+      <y>620</y>
+      <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Broxtowe</string>
@@ -246,10 +354,18 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>600</y>
+      <y>870</y>
       <width>211</width>
-      <height>34</height>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string>Enter</string>
@@ -258,14 +374,115 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
+      <x>40</x>
+      <y>470</y>
+      <width>331</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Average Prices for Each District</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphViewer">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>560</y>
+      <width>751</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>560</y>
+      <width>711</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>518</y>
+      <width>431</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Bar Chart Showing Selected Average Prices</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1300</x>
+      <y>518</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Price Change for Specific House</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
       <x>20</x>
-      <y>320</y>
-      <width>231</width>
-      <height>19</height>
+      <y>0</y>
+      <width>331</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Price Paid Data for Houses/Areas</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="predictionPrototypeButton">
+    <property name="geometry">
+     <rect>
+      <x>1420</x>
+      <y>950</y>
+      <width>301</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
-     <string>Average Prices for district</string>
+     <string>Prediction Prototype</string>
     </property>
    </widget>
   </widget>
