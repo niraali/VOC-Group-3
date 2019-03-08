@@ -170,12 +170,6 @@ class Ui_mainWindow(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
-        self.graphViewer = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphViewer.setGeometry(QtCore.QRect(280, 560, 751, 371))
-        self.graphViewer.setObjectName("graphViewer")
-        self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicsView.setGeometry(QtCore.QRect(1050, 560, 711, 371))
-        self.graphicsView.setObjectName("graphicsView")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(480, 518, 431, 31))
         font = QtGui.QFont()
@@ -201,8 +195,14 @@ class Ui_mainWindow(object):
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
         self.predictionPrototypeButton = QtWidgets.QPushButton(self.centralwidget)
-        self.predictionPrototypeButton.setGeometry(QtCore.QRect(1420, 950, 301, 61))
+        self.predictionPrototypeButton.setGeometry(QtCore.QRect(1440, 960, 301, 61))
         self.predictionPrototypeButton.setObjectName("predictionPrototypeButton")
+        self.mplDistrict = MplWidget(self.centralwidget)
+        self.mplDistrict.setGeometry(QtCore.QRect(310, 550, 811, 391))
+        self.mplDistrict.setObjectName("mplDistrict")
+        self.mplSpecific = MplWidget(self.centralwidget)
+        self.mplSpecific.setGeometry(QtCore.QRect(1140, 550, 661, 391))
+        self.mplSpecific.setObjectName("mplSpecific")
         mainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(mainWindow)
@@ -233,3 +233,4 @@ class Ui_mainWindow(object):
         self.predictionPrototypeButton.setText(_translate("mainWindow", "Prediction Prototype"))
 
 
+from GUI.models.mplwidget import MplWidget

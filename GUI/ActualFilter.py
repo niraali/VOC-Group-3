@@ -13,7 +13,7 @@ def filterByProperty(county, postcode, houseNumber, fileName):
         postcode_list = county_list[(county_list['Postcode'].str.contains(postcode, na=False))]
         # otherwise, it looks for if it contains part of the string
     if houseNumber:
-        houseNumber_list = postcode_list[(postcode_list.PAON == houseNumber)]
+        houseNumber_list = postcode_list[(postcode_list['House No.'] == houseNumber)]
         # Checks if a house number has been entered
         return houseNumber_list
     else:
