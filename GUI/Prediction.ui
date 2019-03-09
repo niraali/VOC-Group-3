@@ -270,8 +270,8 @@
    <widget class="QLabel" name="typeOfHouseLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>70</y>
+      <x>70</x>
+      <y>60</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -291,10 +291,10 @@
    <widget class="QLabel" name="durationLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>260</y>
-      <width>231</width>
-      <height>31</height>
+      <x>70</x>
+      <y>250</y>
+      <width>80</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="font">
@@ -312,8 +312,8 @@
    <widget class="QLabel" name="newLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>340</y>
+      <x>70</x>
+      <y>330</y>
       <width>251</width>
       <height>31</height>
      </rect>
@@ -333,7 +333,7 @@
    <widget class="QPushButton" name="predictButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>430</y>
       <width>211</width>
       <height>61</height>
@@ -502,7 +502,7 @@
    <widget class="QLabel" name="houseTypeLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>20</y>
       <width>501</width>
       <height>31</height>
@@ -523,10 +523,10 @@
    <widget class="QLabel" name="specificHouseTitle">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>580</y>
+      <x>70</x>
+      <y>530</y>
       <width>301</width>
-      <height>31</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -538,13 +538,14 @@
      </font>
     </property>
     <property name="text">
-     <string>Estimation for Specific</string>
+     <string>Estimation for 
+Specific House</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="yearSoldInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>740</y>
       <width>211</width>
       <height>25</height>
@@ -554,7 +555,7 @@
    <widget class="QLabel" name="requestLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>640</y>
       <width>231</width>
       <height>41</height>
@@ -569,13 +570,14 @@
      </font>
     </property>
     <property name="text">
-     <string>Please input information</string>
+     <string>Please input information 
+from the most recent sale</string>
     </property>
    </widget>
    <widget class="QLabel" name="yearSoldLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>700</y>
       <width>251</width>
       <height>31</height>
@@ -596,7 +598,7 @@
    <widget class="QLabel" name="priceLabel">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>770</y>
       <width>251</width>
       <height>31</height>
@@ -617,7 +619,7 @@
    <widget class="QLineEdit" name="priceInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>810</y>
       <width>211</width>
       <height>25</height>
@@ -627,7 +629,7 @@
    <widget class="QPushButton" name="predictButton_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>850</y>
       <width>211</width>
       <height>61</height>
@@ -651,8 +653,8 @@
    <widget class="QLabel" name="specificSummary">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>910</y>
+      <x>370</x>
+      <y>920</y>
       <width>1421</width>
       <height>19</height>
      </rect>
@@ -664,11 +666,17 @@
    <widget class="QLabel" name="disclaimerSign">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>940</y>
-      <width>1161</width>
+      <x>580</x>
+      <y>950</y>
+      <width>1191</width>
       <height>19</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Disclaimer: This price is a guide, only taking price paid data into consideration. Please consult a local real estate professional or an appraiser for a second opinion.</string>
@@ -687,8 +695,8 @@
    <widget class="QLineEdit" name="postcodeInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>220</y>
+      <x>70</x>
+      <y>210</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -697,7 +705,7 @@
    <widget class="QLabel" name="durationLabel_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>140</y>
       <width>231</width>
       <height>31</height>
@@ -715,65 +723,29 @@
      <string>Partial Postcode</string>
     </property>
    </widget>
-   <widget class="QLabel" name="requestLabel_2">
+   <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>660</y>
-      <width>221</width>
-      <height>41</height>
+      <x>70</x>
+      <y>170</y>
+      <width>201</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Calibri</family>
       <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
      </font>
     </property>
     <property name="text">
-     <string>from the most recent sale</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>211</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>(In format &quot;NG7 2RD&quot;)</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="specificHouseTitle_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>610</y>
-      <width>301</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Calibri</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>House</string>
+     <string>(In format: NG7 2RD)</string>
     </property>
    </widget>
    <widget class="QLabel" name="areaSummary">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>370</x>
       <y>870</y>
       <width>1421</width>
       <height>19</height>
@@ -786,8 +758,8 @@
    <widget class="QComboBox" name="typeOfHouseInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>110</y>
+      <x>70</x>
+      <y>100</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -821,8 +793,8 @@
    <widget class="QComboBox" name="durationInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>300</y>
+      <x>70</x>
+      <y>290</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -846,7 +818,7 @@
    <widget class="QComboBox" name="newInput">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>380</y>
       <width>211</width>
       <height>25</height>
