@@ -9,7 +9,7 @@ Created on Thu Feb 14 14:29:59 2019
 # "pip install pyqt5" in your command line. If you don't none of this will 
 # work.
 
-import sys
+import sys, os
 from PyQt5 import QtWidgets, QtCore
 import GUI.ActualFilter as filters
 import GUI.models.dataframe_model as dm
@@ -56,7 +56,15 @@ class DataExplorer(QtWidgets.QMainWindow):
         self.ui.predictionPrototypeButton.clicked.connect(self.goToPredictionPrototype)
 
     def goToPredictionPrototype(self):
-        predictionWindow.show()
+        if self.checkValidFile():
+            predictionWindow.show()
+
+    def checkValidFile(self):
+        if not os.path.exists(selectedFile):
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', "Please select a valid file",
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return False
+        return True
 
     def displayAveragePricesChart(self, dataframe):
         self.ui.mplDistrict.canvas.ax.clear()
@@ -91,7 +99,16 @@ class DataExplorer(QtWidgets.QMainWindow):
                                                    QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
             return
 
+        if not self.checkValidFile():
+            return
+
         filtered_data = filters.filterByProperty(county, postcode, houseNumber, selectedFile)
+
+        if filtered_data.empty:
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', "No properties match selected filter",
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return
+
         print(filtered_data)
         dataModel = dm.PandasModel(filtered_data)
         self.ui.tableViewer.setModel(dataModel)
@@ -100,6 +117,9 @@ class DataExplorer(QtWidgets.QMainWindow):
 
     def showAvgPrices(self):
         #[(0, box1), (1, box2), (2, box3)]
+        if not self.checkValidFile():
+            return
+
         avgPriceDf = pd.DataFrame(columns=['District', 'Avg Price (£)'])
         avgPriceList = []
         districtsUsed = []
@@ -110,6 +130,11 @@ class DataExplorer(QtWidgets.QMainWindow):
                 avgPriceList.append(avg)
                 districtsUsed.append(self.listOfDistricts[index])
 
+        if not avgPriceList:
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', "No areas selected",
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return
+
         avgPriceDf['District'] = districtsUsed
         avgPriceDf['Avg Price (£)'] = avgPriceList
 
@@ -118,8 +143,7 @@ class DataExplorer(QtWidgets.QMainWindow):
         self.ui.tableViewer.setModel(dataModel)
         self.displayAveragePricesChart(avgPriceDf)
 
-class PredictionPrototype(QtWidgets. QMainWindow):
-
+class PredictionPrototype(QtWidgets.QMainWindow):
     def __init__(self):
         super(PredictionPrototype, self).__init__()
         self.ui = PredictionUI()
@@ -143,7 +167,14 @@ class PredictionPrototype(QtWidgets. QMainWindow):
         if new == 'A':
             new = ""
 
-        setupData(selectedFile, new, duration, typeOfHouse, postcode_input)
+        try:
+            setupData(selectedFile, new, duration, typeOfHouse, postcode_input)
+        except RuntimeError as err:
+            print("d")
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', str(err),
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return
+
         xs, ys, predict_x, predict_y, regression_line = prototype()
         self.areaPrediction(xs, ys, predict_x, predict_y, regression_line)
         if (postcode_input):

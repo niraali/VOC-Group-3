@@ -45,7 +45,9 @@ def setupData(filename, new, duration, typeOfHouse, postcode):
         end_data = type_data.loc[type_data['Postcode'].str.startswith(postcode, na=False)]
     else:
         end_data = type_data
-    # TODO: IF DATA IS TOO SHORT SEND ERROR
+    
+    if end_data.empty:
+        raise RuntimeError("No data matches filters")
 
     # Creating xs as just a year sold column, ys as the PV column
     xs = end_data['Year Sold'].astype(int)
