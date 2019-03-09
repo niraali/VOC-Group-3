@@ -77,6 +77,8 @@ class DataExplorer(QtWidgets.QMainWindow):
     def displaySpecificPricesChart(self, dataframe):
         self.ui.mplSpecific.canvas.ax.clear()
         self.ui.mplSpecific.canvas.ax.plot(dataframe['Year Sold'], dataframe['Present Value (GBP)'], marker='o')
+        self.ui.mplSpecific.canvas.ax.plot(dataframe['Year Sold'], dataframe['Price (GBP)'], marker='o')
+        self.ui.mplSpecific.canvas.ax.legend(['Present Value', 'Price'])
         self.ui.mplSpecific.canvas.draw()
         self.ui.mplSpecific.canvas.ax.set_xlabel('Year')
         self.ui.mplSpecific.canvas.ax.set_ylabel('Price')
@@ -201,7 +203,7 @@ class PredictionPrototype(QtWidgets.QMainWindow):
 
     def areaPrediction(self, xs, ys, predict_x, predict_y, regression_line):
         self.ui.areaPrediction.canvas.ax.clear()
-        self.ui.areaPrediction.canvas.ax.scatter(xs, ys, color='b', label = '')
+        self.ui.areaPrediction.canvas.ax.scatter(xs, ys, color='b', label='')
         self.ui.areaPrediction.canvas.ax.scatter(predict_x, predict_y, color='g', label='Area prediction')
         self.ui.areaPrediction.canvas.ax.plot(xs, regression_line, label='Regression line')
         self.ui.areaPrediction.canvas.ax.set_xlabel('Year')
