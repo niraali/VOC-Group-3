@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>60</y>
+      <y>70</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -39,7 +39,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>100</y>
+      <y>160</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -49,7 +49,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>220</y>
+      <y>290</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -70,7 +70,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>280</y>
+      <y>350</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -80,7 +80,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>310</y>
+      <y>380</y>
       <width>251</width>
       <height>31</height>
      </rect>
@@ -101,7 +101,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>340</y>
+      <y>400</y>
       <width>251</width>
       <height>31</height>
      </rect>
@@ -115,14 +115,14 @@
      </font>
     </property>
     <property name="text">
-     <string>E.g. Y or N</string>
+     <string>(E.g. Y or N)</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="newInput">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>380</y>
+      <y>440</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -132,7 +132,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>440</y>
+      <y>480</y>
       <width>211</width>
       <height>61</height>
      </rect>
@@ -176,8 +176,8 @@
    <widget class="QLabel" name="specificHouseTitle">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>620</y>
+      <x>20</x>
+      <y>580</y>
       <width>301</width>
       <height>31</height>
      </rect>
@@ -191,7 +191,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Estimation for Specific House</string>
+     <string>Estimation for Specific</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="yearSoldInput">
@@ -207,9 +207,9 @@
    <widget class="QLabel" name="requestLabel">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>20</x>
       <y>640</y>
-      <width>441</width>
+      <width>231</width>
       <height>41</height>
      </rect>
     </property>
@@ -222,7 +222,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Please input information from </string>
+     <string>Please input information</string>
     </property>
    </widget>
    <widget class="QLabel" name="yearSoldLabel">
@@ -331,7 +331,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>250</y>
+      <y>320</y>
       <width>211</width>
       <height>19</height>
      </rect>
@@ -343,10 +343,10 @@
    <widget class="MplWidget" name="areaPrediction" native="true">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>120</y>
+      <x>300</x>
+      <y>70</y>
       <width>1451</width>
-      <height>791</height>
+      <height>771</height>
      </rect>
     </property>
    </widget>
@@ -354,7 +354,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>180</y>
+      <y>260</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -364,7 +364,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>140</y>
+      <y>190</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -378,34 +378,15 @@
      </font>
     </property>
     <property name="text">
-     <string>Postcode (eg. &quot;NG9 2FX&quot;)</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="areaSummary">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>560</y>
-      <width>68</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="text">
-     <string>**</string>
+     <string>Partial Postcode</string>
     </property>
    </widget>
    <widget class="QLabel" name="requestLabel_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>670</y>
-      <width>441</width>
+      <x>20</x>
+      <y>660</y>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -418,7 +399,67 @@
      </font>
     </property>
     <property name="text">
-     <string>the most recent sale</string>
+     <string>from the most recent sale</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>230</y>
+      <width>211</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(In format &quot;NG7 2RD&quot;)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>211</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>(D - Detatched, T - Terraced</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>211</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>S - Semi-detached, F - Flat)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="specificHouseTitle_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>610</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>House</string>
     </property>
    </widget>
   </widget>

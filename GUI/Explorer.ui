@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1819</width>
+    <width>1848</width>
     <height>1027</height>
    </rect>
   </property>
@@ -96,7 +96,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>250</y>
+      <y>240</y>
       <width>211</width>
       <height>25</height>
      </rect>
@@ -116,7 +116,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>210</y>
+      <y>200</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -137,7 +137,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>270</y>
       <width>221</width>
       <height>31</height>
      </rect>
@@ -148,7 +148,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Postcode (eg. &quot;NG9 2EL&quot;)</string>
+     <string>Postcode</string>
     </property>
    </widget>
    <widget class="QLabel" name="countyLabel">
@@ -185,7 +185,7 @@
    <widget class="QCheckBox" name="ashfieldCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>540</y>
       <width>141</width>
       <height>20</height>
@@ -206,7 +206,7 @@
    <widget class="QCheckBox" name="bassetlawCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>580</y>
       <width>141</width>
       <height>23</height>
@@ -227,7 +227,7 @@
    <widget class="QCheckBox" name="gedlingCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>660</y>
       <width>141</width>
       <height>23</height>
@@ -248,7 +248,7 @@
    <widget class="QCheckBox" name="mansfieldCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>700</y>
       <width>121</width>
       <height>31</height>
@@ -269,7 +269,7 @@
    <widget class="QCheckBox" name="newarkCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>740</y>
       <width>221</width>
       <height>31</height>
@@ -290,7 +290,7 @@
    <widget class="QCheckBox" name="nottinghamCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>780</y>
       <width>141</width>
       <height>31</height>
@@ -311,7 +311,7 @@
    <widget class="QCheckBox" name="rushcliffeCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>820</y>
       <width>171</width>
       <height>31</height>
@@ -332,7 +332,7 @@
    <widget class="QCheckBox" name="broxtoweCheck">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>620</y>
       <width>141</width>
       <height>23</height>
@@ -374,7 +374,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>470</y>
       <width>331</width>
       <height>61</height>
@@ -395,8 +395,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>518</y>
+      <x>450</x>
+      <y>520</y>
       <width>431</width>
       <height>31</height>
      </rect>
@@ -413,8 +413,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1300</x>
-      <y>518</y>
+      <x>1170</x>
+      <y>520</y>
       <width>281</width>
       <height>31</height>
      </rect>
@@ -455,10 +455,10 @@
    <widget class="QPushButton" name="predictionPrototypeButton">
     <property name="geometry">
      <rect>
-      <x>1440</x>
-      <y>960</y>
-      <width>301</width>
-      <height>61</height>
+      <x>1680</x>
+      <y>650</y>
+      <width>151</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="text">
@@ -468,9 +468,9 @@
    <widget class="MplWidget" name="mplDistrict" native="true">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>550</y>
-      <width>811</width>
+      <width>671</width>
       <height>391</height>
      </rect>
     </property>
@@ -478,11 +478,32 @@
    <widget class="MplWidget" name="mplSpecific" native="true">
     <property name="geometry">
      <rect>
-      <x>1140</x>
+      <x>990</x>
       <y>550</y>
       <width>661</width>
       <height>391</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="newLabelIgnore">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>In the format: NG7 2RD</string>
     </property>
    </widget>
   </widget>
@@ -491,7 +512,7 @@
   <customwidget>
    <class>MplWidget</class>
    <extends>QWidget</extends>
-   <header>mplwidget</header>
+   <header>GUI.models.mplwidget</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
