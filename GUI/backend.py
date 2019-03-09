@@ -29,6 +29,11 @@ from GUI.Explorer import Ui_mainWindow as ExplorerUI
 from GUI.Prediction import Ui_MainWindow as PredictionUI
 
 selectedFile = ""
+xs = 0
+ys = 0
+predict_x = 0
+predict_y = 0
+regression_line = 0
 
 class DataExplorer(QtWidgets.QMainWindow):
     listOfCheckboxes = []
@@ -57,12 +62,16 @@ class DataExplorer(QtWidgets.QMainWindow):
         self.ui.mplDistrict.canvas.ax.clear()
         self.ui.mplDistrict.canvas.ax.bar(np.arange(len(dataframe)), dataframe['Avg Price (£)'],
                                           tick_label=dataframe['District'].str[:3])
+        self.ui.mplDistrict.canvas.ax.set_xlabel('District')
+        self.ui.mplDistrict.canvas.ax.set_ylabel('Average Price')
         self.ui.mplDistrict.canvas.draw()
 
     def displaySpecificPricesChart(self, dataframe):
         self.ui.mplSpecific.canvas.ax.clear()
-        self.ui.mplSpecific.canvas.ax.plot(dataframe['Year Sold'], dataframe['Present Value (GBP)'])
+        self.ui.mplSpecific.canvas.ax.plot(dataframe['Year Sold'], dataframe['Present Value (GBP)'], marker='o')
         self.ui.mplSpecific.canvas.draw()
+        self.ui.mplSpecific.canvas.ax.set_xlabel('Year')
+        self.ui.mplSpecific.canvas.ax.set_ylabel('Price')
 
     def openFileDialogue(self):
         global selectedFile
@@ -71,20 +80,23 @@ class DataExplorer(QtWidgets.QMainWindow):
     def enterButton(self):
         county = str(self.ui.countyDropDown.currentText())
         houseNumber = self.ui.houseNoInput.text()
-        postcode = self.ui.postcodeInput.text()
-        if (county != ""):
-            msg = QtWidgets.QMessageBox()
-            msg.setIcon(QtWidgets.QMessageBox.Information)
-            msg.setText("Please select a county")
-        if (postcode != ""):
-            msg = QtWidgets.QMessageBox()
-            msg.setIcon(QtWidgets.QMessageBox.Information)
-            msg.setText("Please input a Postcode")
+        postcode = self.ui.postcodeInput.text().upper()
+        if (county == ""):
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', "Please select a County",
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return
+
+        if (postcode == ""):
+            msg = QtWidgets.QMessageBox().critical(self, 'Important Message', "Please enter a Postcode",
+                                                   QtWidgets.QMessageBox.Ok, QtWidgets.QMessageBox.Ok)
+            return
+
         filtered_data = filters.filterByProperty(county, postcode, houseNumber, selectedFile)
         print(filtered_data)
         dataModel = dm.PandasModel(filtered_data)
         self.ui.tableViewer.setModel(dataModel)
-        self.displaySpecificPricesChart(filtered_data)
+        if filtered_data['Postcode'].unique().size == 1:
+            self.displaySpecificPricesChart(filtered_data)
 
     def showAvgPrices(self):
         #[(0, box1), (1, box2), (2, box3)]
@@ -117,38 +129,29 @@ class PredictionPrototype(QtWidgets. QMainWindow):
 
     def predictButton(self):
         QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        global xs, ys, predict_x, predict_y, regression_line
 
-        typeOfHouse = self.ui.typeOfHouseInput.text()
-        duration = self.ui.durationInput.text()
-        new = self.ui.newInput.text()
-        postcode_input = self.ui.postcodeInput.text()
+        typeOfHouse = str(self.ui.typeOfHouseInput.currentText())[:1]
+        duration = str(self.ui.durationInput.currentText())[:1]
+        new = str(self.ui.newInput.currentText())[:1]
+        postcode_input = self.ui.postcodeInput.text().upper()
+
+        if typeOfHouse == 'A':
+            typeOfHouse = ""
+        if duration == 'A':
+            duration = ""
+        if new == 'A':
+            new = ""
+
         setupData(selectedFile, new, duration, typeOfHouse, postcode_input)
         xs, ys, predict_x, predict_y, regression_line = prototype()
         self.areaPrediction(xs, ys, predict_x, predict_y, regression_line)
-        text = "In the area of " + str(postcode_input) + " the average price for a property which is "
+        if (postcode_input):
+            text = str(postcode_input) + ": In this area "
+        else:
+            text = "Over all areas "
 
-        if new.lower() == 'y':
-            text += "newly-built, "
-        elif new.lower() == 'n':
-            text += ""
-
-        if typeOfHouse.lower() == 'd':
-            text += "detached "
-        elif typeOfHouse.lower() == 's':
-            text += "semidetached "
-        elif typeOfHouse.lower() == 't':
-            text += "terraced "
-        elif typeOfHouse.lower() == 'f':
-            text += "apartment "
-
-        text += "and "
-
-        if duration.lower() == 'f':
-            text += "freehold "
-        elif duration.lower() == 'l':
-            text += "leasehold "
-
-        text += " is " + str(predict_y)
+        text += "the average price for a property is £" + str('{:.2f}'.format(round(predict_y, 2)))
         self.ui.areaSummary.setText(text)
 
         QtWidgets.QApplication.restoreOverrideCursor()
@@ -160,22 +163,31 @@ class PredictionPrototype(QtWidgets. QMainWindow):
         predictHouse = button2(priceInput, yearSoldInput)
         self.specificHousePrediction(predictHouse, int(yearSoldInput), float(priceInput))
 
-        text = "This property would be valued at £" + str(predictHouse)
+        text = "This property would be valued at £" + str('{:.2f}'.format(round(predictHouse, 2)))
         self.ui.specificSummary.setText(text)
 
         QtWidgets.QApplication.restoreOverrideCursor()
 
     def areaPrediction(self, xs, ys, predict_x, predict_y, regression_line):
         self.ui.areaPrediction.canvas.ax.clear()
-        self.ui.areaPrediction.canvas.ax.scatter(xs, ys, color='#003F72', label='data')
-        self.ui.areaPrediction.canvas.ax.scatter(predict_x, predict_y, color='g', label='Predicted point')
+        self.ui.areaPrediction.canvas.ax.scatter(xs, ys, color='b', label = '')
+        self.ui.areaPrediction.canvas.ax.scatter(predict_x, predict_y, color='g', label='Area prediction')
         self.ui.areaPrediction.canvas.ax.plot(xs, regression_line, label='Regression line')
+        self.ui.areaPrediction.canvas.ax.set_xlabel('Year')
+        self.ui.areaPrediction.canvas.ax.set_ylabel('Price')
+        self.ui.areaPrediction.canvas.ax.legend()
+        self.ui.areaPrediction.canvas.ax.grid(False)
         self.ui.areaPrediction.canvas.draw()
 
     def specificHousePrediction(self, predict_house, year_input, price_input):
+        global xs, ys, predict_x, predict_y, regression_line
+        self.areaPrediction(xs, ys, predict_x, predict_y, regression_line)
         self.ui.areaPrediction.canvas.ax.scatter(year_input, price_input, color='#ff1493', label='Previous sale')
-        self.ui.areaPrediction.canvas.ax.scatter(2019, predict_house, color='#ff1493', label='Predict house')
+        self.ui.areaPrediction.canvas.ax.scatter(2019, predict_house, color='#ff1493', label='New prediction')
+        self.ui.areaPrediction.canvas.ax.legend()
+        self.ui.areaPrediction.canvas.ax.grid(False)
         self.ui.areaPrediction.canvas.draw()
+
 
 app = QtWidgets.QApplication([])
 window = DataExplorer()
