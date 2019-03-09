@@ -1,8 +1,7 @@
 from statistics import mean
-import matplotlib.pyplot as plt
+
 import pandas as pd
 from matplotlib import style
-from sklearn.model_selection import train_test_split
 
 xs = 0
 ys = 0
@@ -53,13 +52,15 @@ def setupData(filename, new, duration, typeOfHouse, postcode):
     xs = end_data['Year Sold'].astype(int)
     ys = end_data['Price (GBP)'].astype(int)
 
+    print("xs: " + str(xs))
+    print("ys: " + str(ys))
+
     m, b = best_fit_slope_and_intercept(xs, ys)
 
 def prototype():
-    style.use('ggplot')
-
     # Print gradient and intercept
-    print(m, b)
+    print("m: " + str(m))
+    print("b: " + str(b))
 
     # Regression line formula for all x in xs, create a predict_x for desired year 2019
     regression_line = [(m*x)+b for x in xs]
@@ -85,6 +86,11 @@ def coefficients_of_determination(ys_orig, ys_line):
 # Function to calculated the covariance between xs and ys
 def best_fit_slope_and_intercept(xs, ys):
     global m, b
+    print(mean(xs))
+    print(mean(ys))
+    print(mean(xs * ys))
+    print(mean(xs * xs))
+
     m = (((mean(xs) * mean(ys)) - mean(xs * ys)) / ((mean(xs) * mean(xs)) - mean(xs * xs)))
     b = mean(ys) - m * mean(xs)
     return m, b

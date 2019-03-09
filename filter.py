@@ -1,5 +1,4 @@
 from pandas import read_csv, Series
-import dask.dataframe as dd
 
 
 def filter(fileName):

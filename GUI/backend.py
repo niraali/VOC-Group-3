@@ -9,16 +9,14 @@ Created on Thu Feb 14 14:29:59 2019
 # "pip install pyqt5" in your command line. If you don't none of this will 
 # work.
 
-import sys, os
+import os
+import sys
+
+import numpy as np
 from PyQt5 import QtWidgets, QtCore
+
 import GUI.ActualFilter as filters
 import GUI.models.dataframe_model as dm
-from prototype import *
-import matplotlib.pyplot as plt
-from matplotlib.figure import Figure
-import pandas as pd
-import numpy as np
-
 # In QT-Designer (you can find it in C:\Anaconda\Library\bin\designer.exe) you
 # can create a UI with drag and drop. When you save this, a .ui file is created.
 # When you run "pyuic5 mydesign.ui -o mydesign.py" in a command line window
@@ -27,6 +25,7 @@ import numpy as np
 # 'design.py'. You can then use this as shown in this file.
 from GUI.Explorer import Ui_mainWindow as ExplorerUI
 from GUI.Prediction import Ui_MainWindow as PredictionUI
+from prototype import *
 
 selectedFile = ""
 xs = 0
@@ -114,7 +113,7 @@ class DataExplorer(QtWidgets.QMainWindow):
         print(filtered_data)
         dataModel = dm.PandasModel(filtered_data)
         self.ui.tableViewer.setModel(dataModel)
-        if filtered_data['Postcode'].unique().size == 1:
+        if filtered_data['Postcode'].unique().size == 1 and filtered_data['House No.'].unique().size == 1:
             self.displaySpecificPricesChart(filtered_data)
 
     def showAvgPrices(self):
@@ -180,9 +179,9 @@ class PredictionPrototype(QtWidgets.QMainWindow):
         xs, ys, predict_x, predict_y, regression_line = prototype()
         self.areaPrediction(xs, ys, predict_x, predict_y, regression_line)
         if (postcode_input):
-            text = str(postcode_input) + ": In this area "
+            text = str(postcode_input) + ": In this area, "
         else:
-            text = "Over all areas "
+            text = "Over all areas in Nottinghamshire, "
 
         text += "the average price for a property is £" + str('{:.2f}'.format(round(predict_y, 2)))
         self.ui.areaSummary.setText(text)
