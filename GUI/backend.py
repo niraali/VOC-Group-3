@@ -80,7 +80,7 @@ class DataExplorer(QtWidgets.QMainWindow):
             msg = QtWidgets.QMessageBox()
             msg.setIcon(QtWidgets.QMessageBox.Information)
             msg.setText("Please input a Postcode")
-        filtered_data = filters.filterByProperty(county, postcode, houseNumber, self.selectedFile)
+        filtered_data = filters.filterByProperty(county, postcode, houseNumber, selectedFile)
         print(filtered_data)
         dataModel = dm.PandasModel(filtered_data)
         self.ui.tableViewer.setModel(dataModel)
@@ -93,7 +93,7 @@ class DataExplorer(QtWidgets.QMainWindow):
         districtsUsed = []
         for index, box in enumerate(self.listOfCheckboxes):
             if box.isChecked():
-                filtered_data = filters.filterByDistrict(self.listOfDistricts[index].upper(), self.selectedFile)
+                filtered_data = filters.filterByDistrict(self.listOfDistricts[index].upper(), selectedFile)
                 avg = filtered_data['Price (GBP)'].astype(float).mean()
                 avgPriceList.append(avg)
                 districtsUsed.append(self.listOfDistricts[index])
@@ -173,8 +173,8 @@ class PredictionPrototype(QtWidgets. QMainWindow):
         self.ui.areaPrediction.canvas.draw()
 
     def specificHousePrediction(self, predict_house, year_input, price_input):
-        self.ui.areaPrediction.canvas.ax.scatter(year_input, price_input, color='r', label='Previous sale')
-        self.ui.areaPrediction.canvas.ax.scatter(2019, predict_house, color='r', label='Predict house')
+        self.ui.areaPrediction.canvas.ax.scatter(year_input, price_input, color='#ff1493', label='Previous sale')
+        self.ui.areaPrediction.canvas.ax.scatter(2019, predict_house, color='#ff1493', label='Predict house')
         self.ui.areaPrediction.canvas.draw()
 
 app = QtWidgets.QApplication([])
