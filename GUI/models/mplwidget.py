@@ -14,7 +14,6 @@ class MplCanvas(FigureCanvas):
 
         # setup Matplotlib Figure and Axis
         self.fig = Figure()
-        self.fig.tight_layout()
         self.ax = self.fig.add_subplot(111)
         # initialization of the canvas
         FigureCanvas.__init__(self, self.fig)

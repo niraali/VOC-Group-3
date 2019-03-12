@@ -1,7 +1,10 @@
 from statistics import mean
 
 import pandas as pd
+from math import sqrt
+import numpy as np
 from matplotlib import style
+from sklearn.metrics import mean_squared_error
 
 xs = 0
 ys = 0
@@ -105,3 +108,14 @@ def button2(price_input, year_input):
     print(predict_house)
     # house_regression_line = [(m*year_input+a]
     return predict_house
+
+# #RMSE
+# def rmse(y1, y_hat):
+#     y_actual = np.array(y1)
+#     y_pred = np.array(y_hat)
+#     error = (y_actual-y_pred)
+#     error_mean = round(np.mean(error))
+#     err_sq = math.sqrt(error_mean)
+#     return err_sq
+#     print(rmse[ys, regression_line])
+

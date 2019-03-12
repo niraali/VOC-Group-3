@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1818</width>
+    <width>1928</width>
     <height>1054</height>
    </rect>
   </property>
@@ -297,7 +297,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>250</y>
+      <y>280</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -318,7 +318,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>330</y>
+      <y>360</y>
       <width>251</width>
       <height>31</height>
      </rect>
@@ -339,7 +339,7 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>430</y>
+      <y>460</y>
       <width>210</width>
       <height>60</height>
      </rect>
@@ -591,8 +591,8 @@
    <widget class="QLabel" name="houseTypeLabel">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>20</y>
+      <x>790</x>
+      <y>40</y>
       <width>501</width>
       <height>31</height>
      </rect>
@@ -648,9 +648,9 @@ Specific House</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>610</y>
+      <y>600</y>
       <width>231</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -752,7 +752,7 @@ from the most recent sale</string>
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>890</y>
+      <y>880</y>
       <width>1421</width>
       <height>31</height>
      </rect>
@@ -772,8 +772,8 @@ from the most recent sale</string>
    <widget class="QLabel" name="disclaimerSign">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>950</y>
+      <x>640</x>
+      <y>930</y>
       <width>1191</width>
       <height>19</height>
      </rect>
@@ -793,8 +793,8 @@ from the most recent sale</string>
      <rect>
       <x>300</x>
       <y>70</y>
-      <width>1451</width>
-      <height>771</height>
+      <width>1571</width>
+      <height>731</height>
      </rect>
     </property>
    </widget>
@@ -802,7 +802,7 @@ from the most recent sale</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>210</y>
+      <y>230</y>
       <width>210</width>
       <height>30</height>
      </rect>
@@ -836,26 +836,27 @@ from the most recent sale</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>170</y>
+      <y>165</y>
       <width>201</width>
-      <height>21</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Calibri</family>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>In the format: NG9 2EL</string>
+     <string>(Input any length postcode 
+including a space)</string>
     </property>
    </widget>
    <widget class="QLabel" name="areaSummary">
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>850</y>
+      <y>840</y>
       <width>1421</width>
       <height>31</height>
      </rect>
@@ -896,12 +897,12 @@ from the most recent sale</string>
     </item>
     <item>
      <property name="text">
-      <string>Detatched</string>
+      <string>Detached</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Semi-detatched</string>
+      <string>Semi-detached</string>
      </property>
     </item>
     <item>
@@ -911,7 +912,7 @@ from the most recent sale</string>
     </item>
     <item>
      <property name="text">
-      <string>Flat</string>
+      <string>Flat/ Maisonette</string>
      </property>
     </item>
    </widget>
@@ -919,7 +920,7 @@ from the most recent sale</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>290</y>
+      <y>310</y>
       <width>210</width>
       <height>30</height>
      </rect>
@@ -933,6 +934,11 @@ from the most recent sale</string>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(111, 217, 255);</string>
     </property>
+    <item>
+     <property name="text">
+      <string>Any</string>
+     </property>
+    </item>
     <item>
      <property name="text">
       <string>Freehold</string>
@@ -943,17 +949,12 @@ from the most recent sale</string>
       <string>Leasehold</string>
      </property>
     </item>
-    <item>
-     <property name="text">
-      <string>Any</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="newInput">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>380</y>
+      <y>400</y>
       <width>210</width>
       <height>30</height>
      </rect>
@@ -969,17 +970,17 @@ from the most recent sale</string>
     </property>
     <item>
      <property name="text">
+      <string>Any</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Yes</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>No</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Any</string>
      </property>
     </item>
    </widget>
