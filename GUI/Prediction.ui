@@ -359,8 +359,8 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -404,8 +404,8 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -413,8 +413,8 @@
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -433,8 +433,8 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -478,8 +478,8 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -487,8 +487,8 @@
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -507,8 +507,8 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -552,8 +552,8 @@
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -561,8 +561,8 @@
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>111</red>
-          <green>217</green>
+          <red>178</red>
+          <green>226</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -582,7 +582,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true">background-color: rgb(178, 226, 255);</string>
     </property>
     <property name="text">
      <string>Predict</string>
@@ -641,7 +641,7 @@ Specific House</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="requestLabel">
@@ -718,7 +718,7 @@ from the most recent sale</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QPushButton" name="predictButton_2">
@@ -742,7 +742,7 @@ from the most recent sale</string>
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true">background-color: rgb(178, 226, 255);</string>
     </property>
     <property name="text">
      <string>Estimate</string>
@@ -808,7 +808,7 @@ from the most recent sale</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLabel" name="durationLabel_2">
@@ -888,7 +888,7 @@ including a space)</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true">background-color: rgb(178, 226, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -932,7 +932,7 @@ including a space)</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true">background-color: rgb(178, 226, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -966,7 +966,7 @@ including a space)</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(111, 217, 255);</string>
+     <string notr="true">background-color: rgb(178, 226, 255);</string>
     </property>
     <item>
      <property name="text">

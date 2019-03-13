@@ -103,7 +103,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 198, 181);</string>
+     <string notr="true">background-color: rgb(226, 228, 255);</string>
     </property>
     <property name="text">
      <string>Choose File</string>
@@ -124,27 +124,27 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -153,27 +153,27 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -182,27 +182,27 @@
        <colorrole role="Button">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Base">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
        <colorrole role="Window">
         <brush brushstyle="SolidPattern">
          <color alpha="255">
-          <red>255</red>
-          <green>198</green>
-          <blue>181</blue>
+          <red>226</red>
+          <green>228</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -221,7 +221,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 198, 181);</string>
+     <string notr="true">background-color: rgb(226, 228, 255);</string>
     </property>
     <property name="text">
      <string>Enter</string>
@@ -243,7 +243,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 198, 181);</string>
+     <string notr="true">background-color: rgb(226, 228, 255);</string>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -538,7 +538,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 198, 181);</string>
+     <string notr="true">background-color: rgb(226, 228, 255);</string>
     </property>
     <property name="text">
      <string>Enter</string>
@@ -753,7 +753,7 @@ Price
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 198, 181);</string>
+     <string notr="true">background-color: rgb(226, 228, 255);</string>
     </property>
     <property name="text">
      <string>Prediction Prototype 
